@@ -1,1 +1,56 @@
-<p>register works!</p>
+<!-- Contenedor general -->
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+            <!-- Ilustración -->
+            <img class="homeIlustration" title="ngx-Health" alt="ngx-Healt" src="../../../../assets/ilustrations/undraw_doctor_kw5l.png">
+            <!-- Ilustración -->
+            <!-- Titulo de la App -->
+            <h1 class="text-center mt-3 redFont ProductSans display-4">ngx-Health</h1>
+            <!-- Titulo de la App -->
+            <!-- Formulario de registro -->
+            <form class="ProductSans mt-2" [formGroup]="registerForm">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Introduzca un nombre" formControlName="userName">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Correo electrónico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="someone@example.com" formControlName="userEmail">
+                    <small id="emailHelp" class="form-text text-muted">Nunca mostraremos tu dirección de correo a nadie mas.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="••••••••••••••••" formControlName="userPassword">
+                </div>
+            </form>
+            <!-- Formulario de registro -->
+            <!-- Boton para ir el formulario de registro -->
+            <button class="btn btn-lg btn-block redBackground ProductSans text-white text-center mt-3" (click)="createUser(registerModal)" [disabled]="registerForm.invalid">Registrarme</button>
+            <!-- Boton para ir el formulario de registro -->
+            <!-- Texto para el registro -->
+            <p class="lead redFont ProductSans text-center mt-3 cursorPointer" (click)="goToLogin()">¿Ya tienes cuenta? Iniciar sesión</p>
+            <!-- Texto para el registro -->
+            <!-- Agradecimientos -->
+            <img class="ngDominican" title="ngx-Health" alt="ngx-Healt" src="../../../../../assets/icons/ngDominican.png">
+            <p class="redFont ProductSans text-center m-0 mt-3">Powered by:</p>
+            <p class="redFont ProductSans text-center font-weight-bold m-0 mb-5">ng-Domincan Study Group</p>
+            <!-- Agradecimientos -->
+        </div>
+    </div>
+</div>
+<!-- Contenedor general -->
+<!-- Modals -->
+<ng-template #registerModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left"></h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalReference.hide()"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+        <img class="registerIcon mt-5" src="{{modalData.modalIcon}}" alt="Logo">
+        <h2 class="text-center ProductSans text-dark mt-4">{{modalData.modalTitle}}</h2>
+        <p class="text-center ProductSans mt-3">{{modalData.modalDescription}}</p>        
+        <button class="btn btn-block btn-lg redBackground text-center ProductSans text-white mt-2 mb-2" (click)="continuousFunction()">Aceptar</button>
+    </div>
+</ng-template>
+<!-- Modals -->
