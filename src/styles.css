@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: 'Product Sans';
+    src: url('../src/assets/fonts/ProductSans-Regular.ttf');
+}
+*{
+    font-family: 'Product Sans', sans-serif;
+}
+.redBackground{
+    background-color: #E22D34 !important;
+}
+.redFont{
+    color: #E22D34 !important;
+}
+.cursorPointer{
+    cursor: pointer;
+}
